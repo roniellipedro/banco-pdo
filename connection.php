@@ -6,7 +6,7 @@ $dsn = "mysql:host=$ENV_HOST;dbname=$ENV_DBNAME";
 
 try {
     $pdo = new PDO($dsn, $ENV_USERNAME, $ENV_PASSWORD);
-    echo "Conexão bem sucedida.";
+    echo "Conexão bem sucedida.<hr><br>";
 } catch (PDOException $e) {
     echo "Erro na conexão: " . $e->getMessage();
 }
