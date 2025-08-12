@@ -6,12 +6,18 @@ $sql = 'INSERT INTO usuarios (username,NAME,PASSWORD) VALUES (:username,:name,:p
 
 $stmt = $pdo->prepare($sql);
 
-$_username = "robertosilva1";
-$_name = "Roberto da Silva1";
+$_username = "robertosilva2";
+$_name = "Roberto da Silva2";
 $_password = "123456";
 
 $stmt->bindParam(':username', $_username);
 $stmt->bindParam(':name', $_name);
 $stmt->bindParam(':password', $_password);
 
-$stmt->execute();
+if ($stmt->execute()) {
+    if ($stmt->rowCount() > 0) {
+        echo 'Usuário inserido com sucesso';
+    } else {
+        echo 'Nenhum dado foi inserido no banco';
+    }
+}

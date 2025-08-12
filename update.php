@@ -23,3 +23,6 @@ if ($queryExecute) {
 } else {
     echo 'Erro ao atualizar';
 }
+
+echo '<br>';
+echo 'Linhas afetadas: ' . $stmt->rowCount();
