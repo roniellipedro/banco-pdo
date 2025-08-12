@@ -2,13 +2,15 @@
 
 require_once 'connection.php';
 
-$sql = 'SELECT * FROM usuarios';
+
+$id = '1; DROP TABLE usuarios;';
+$sql = 'SELECT * FROM usuarios WHERE id = :id';
 
 $stmt = $pdo->prepare($sql);
-
+$stmt->bindParam(':id', $id);
 $result = $stmt->execute();
 
-if ($result) {
+if ($stmt) {
     // $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     // foreach ($data as $line) {
